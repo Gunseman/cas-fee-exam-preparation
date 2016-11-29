@@ -13,7 +13,13 @@ var mdDocs = [
     "20160615-client-server-express.md",
     "20160622-typescript.md",
     "20160627-angular2.md",
-    "20160713-html-css.md"
+    "20160713-html-css.md",
+    "20160907_komplexe_sites_modular_strukturieren.md",
+    "20160914_testing.md",
+    "20160921_react_and_test_driven_development.md",
+    "20160928_SPA.md",
+    "20161026_grosse_seiten_mit_react.md",
+    "20161102_site_optimization.md"
   ];
 var pdfDocs = mdDocs.map(function (d) { return "pdf/" + d.replace(".md", ".pdf") });
 var options = {
