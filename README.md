@@ -4,7 +4,8 @@ All questions that have been gathered in our forum.
 
 ## Preparation
 
-`npm -g install gulp`
+- `npm install`
+- `npm -g install gulp`
 
 ## Generation
 
