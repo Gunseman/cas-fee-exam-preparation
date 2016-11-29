@@ -1,0 +1,290 @@
+# Fragen CAS-FEE - Prüfungsvorbereitung
+
+## [4] 25.05.2016 Engineering JavaScript (1)
+
+### Closure, shorthand definition
+von Raphael Hirscher - Sonntag, 23. Oktober 2016, 23:50
+
+Was spuckt die Konsole aus und warum?
+
+```javascript
+(function(){
+  var f = e = 10;
+})();
+
+console.log("f defined? " + (typeof f !== 'undefined'));
+console.log("e defined? " + (typeof e !== 'undefined'));
+```
+
+Antwort:
+- f defined? false
+- e defined? true
+
+Grund:  
+Das Statement innerhalb des Closures ist eine Shorthand-Definition.
+
+```
+e = 10;
+var f = e;
+und nicht wie gerne gedacht:
+var f = 10;
+var e = 10;
+```
+
+Da e nicht mittels var definiert wurde, ist e global erreichbar, auch wenn sich e innerhalb eines Closures befindet.
+Daraus ergeben sich die entsprechenden console logs.
+
+### Wie nennt sich die innerhalb der runden Klammern verwendete Syntax und wie würde der Ausdruck in ECMAScript 5 aussehen?
+von Patrick Bonetti - Mittwoch, 1. Juni 2016, 15:54
+
+```javascript
+var data = [1,2,3,4].map(x => x*x);
+```
+
+Antwort:  
+Die verwendete Syntax ist bekannt als arrow function/Arrow-Funktion oder auch lambda function/Lambda-Funktion.
+
+In ES5 würde der Ausdruck wie folgt aussehen:
+```javascript
+var data = [1,2,3,4].map( function(x) { return x*x; } );
+```
+
+### Was ergibt folgende Gleichung (8>2)\*5+'px'
+von Benjamin Rüde - Mittwoch, 1. Juni 2016, 15:05
+
+a) NaN  
+b) undefined  
+c) 5px  
+d) true5px  
+
+Antwort c
+
+### typeOf() Rückgabe Werte
+von Daniel Kellenberger - Mittwoch, 1. Juni 2016, 09:11
+
+Was wird in der Konsole geloggt?
+
+```javascript
+var b;
+var c = 'a';
+var typeofs = [
+  [
+    typeof(2 + 3),
+    typeof(1 / 0),
+    typeof(Number.MAX_VALUE + 1)
+  ], [
+    typeof(a),
+    typeof(b),
+    typeof(c)
+  ], [
+    typeof(null),
+    typeof(undefined),
+    typeof({})
+  ]
+];
+console.log(JSON.stringify(typeofs));
+```
+
+Antwort:
+`[["number","number","number"],["undefined","undefined","string"],["object","undefined","object"]]`
+
+### Worauf muss bei der Konkatenierung von JavaScript-Files in Bezug auf 'use strict' geachtet werden?
+von David Heim - Dienstag, 31. Mai 2016, 16:45
+
+'use strict' steht am Anfang eines JavaScript-Files und gilt für das gesamte File. Bei der Konkatenierung mehrerer JavaScript-Files muss darauf geachtet werden, dass der Strict Mode nur auf Files angewandt wird, die dafür vorgesehen sind (geändertes Laufzeit-Verhalten).
+
+Es empfiehlt sich, die Files mit und ohne Strict Mode getrennt zu konkatenieren. Zudem sollte darauf geachtet werden, dass 'use strict' im konkatenierten File nur in der ersten Zeile steht und später nicht wiederholt wird. Die meisten Concat-Utilities bieten dafür eine Option an.
+
+### Wozu werden JavaScript Compiler eingesetzt?
+von Noel Bellón - Montag, 30. Mai 2016, 15:48
+
+Um zukünftige Funktionen von JavaScript (Ecmascript), Browsern welche diese JavaScript Versionen noch nicht unterstützen zur Verfügung zu stellen.
+
+### Nenne Deine drei Favoriten unter den neuen Features von ECMAScript 6.
+von Marc Labud - Montag, 30. Mai 2016, 14:31
+
+Die neue Klassensyntax class erleichtert das objectorientierte Programmieren in JavaScript.  
+=> http://es6-features.org/#ClassDefinition
+
+Template Literals sind ein Werkzeug für die Arbeit mit Zeichenketten und ersetzen teilweise die Notwendigkeit von Template-Bibliotheken wie handlebars.js, mustache.js und Jade.  
+=> https://leanpub.com/understandinges6/read/#leanpub-auto-tagged-templates
+
+Promises für die asynchrone Softwareentwicklung und als Alternative zu callbacks.  
+=> http://exploringjs.com/es6/ch_promises.html
+
+Arrow Funktionen als Möglichkeit, Funktionen mit relativ wenig Boilerplate-Code zu erzeugen.  
+=> http://exploringjs.com/es6/ch_arrow-functions.html#_overview-7
+
+let zur Variablendeklaration im block-scope.  
+=> `let zahl = i;`
+
+const als Schlüsselwort für die Verwendung von Konstanten.  
+=> `const MINIMUM = 3;`
+
+MINIMUM = 2;  // ohne Wirkung bzw. je nach Laufzeitumgebung Fehler  
+=> `console.log (MINIMUM); //3`
+
+Dies ist eine Auswahl, man kann auch ein Buch über das Thema schreiben :-)  
+=> http://exploringjs.com/es6
+
+### Was gibt die Funktion "toString()" zurück?
+von Philipp Bachmann - Sonntag, 29. Mai 2016, 22:50
+
+`toString()` gibt den Source Code von der Funktion zurück.
+
+Beispiel:
+```javascript
+function sayHi(name){
+   return "Hi " +name;
+}
+
+sayHi.toString() -> function sayHi(name){
+  return "Hi " + name;
+}
+```
+
+### Was versteht man unter einem Scope und welche Arten gibt es?
+von Michel Rimbeaux - Samstag, 28. Mai 2016, 15:16
+
+**Scope**  
+Unter einem "Scope" versteht man die Sichtbarkeit von Variablen und Funktionen resp. deren Geltungsbereich
+
+**Arten von Scope**
+1. Variable im globalen Scope  
+  Ohne «var»  
+  Im Browser über window.myGlobalVariable zugreifbar. In node.js: global.myGlobalVariable
+
+2. Variablen im lokalen / Funktionen Scope  
+  Benötigt ein «var»  
+  Nur innerhalb des Scopes zugreifbar oder dessen «nested» Scopes  
+  Closures
+
+3. «Module Scope»: (node.js)  
+  Node.js erzeugt pro File ein neuen Scope => Nicht explizit globale Variablen werden auf diesen gelegt. Dieser ist File basiert.
+
+4. «Block Scopes»  
+  Mit ECMA6 möglich
+  ‘usestrict’ Modus notwendig
+  «let» als neues Keyword
+
+### Was für ein Fehler beinhaltet folgender Code:
+von Patrik Dietschweiler - Freitag, 27. Mai 2016, 23:58
+
+```javascript
+function createGuid(){
+    return    
+    {
+        guid: "936DA01F-9ABD-4D9D-80C7-02AF85C822A8"
+    }
+}
+```
+
+A semicolon is inserted at the end, when a statement with restricted productions in the grammar is followed by a line terminator.
+
+Das return Statement wird mit dem nächsten“line terminator” beendet. Somit wird kein Guid objekt zurück gegeben.
+
+[MDN Semicolon insertion](http://people.mozilla.org/~jorendorff/es6-draft.html#sec-rules-of-automatic-semicolon-insertion)
+
+### Welches Resultat ergibt folgender Ausdruck?
+von Rafael Bamert - Freitag, 27. Mai 2016, 21:49
+
+Ausdruck:
+```javascript
+NaN == NaN
+```
+
+
+Antwort:  
+a) true  
+b) false  
+c) undefined  
+d) null
+
+Lösung:  
+b)
+
+Positive Vergleiche mit NaN ergeben immer false.
+
+### Was bezweckt der Strict Mode ('use strict')? Nenne 3 Beispiele
+von Fabio Cavalera - Freitag, 27. Mai 2016, 08:41
+
+- Die Security wird leicht verbessert
+- Lässt "unbeabsichtigte" globale Variablendefinitionen nicht mehr zu
+- Wertzuweisungen auf Read-Only Variablen (bsp. NaN) sind nicht mehr möglich
+- Die Bezeichnungen der Funktionsparameter müssen in diesem Modus unique definiert sein
+- Einige ECMAScript 6 Funktionen setzen den Strict Mode voraus
+
+### Was ist im JavaScript mit "Hoisting" gemeint?
+von Stefan Eugster - Donnerstag, 26. Mai 2016, 08:47
+
+JavaScript verschiebt automatisch alle Deklarationen von Methoden / Variablen an den Anfang des Scopes.
+
+*ACHTUNG:*  
+Initialisierungen werden NICHT ge-«hoisted». Es wir nur die Deklaration der Variablen ge-«hoisted».
+Bei einer «Function-Expressions» wird die Zuweisung nicht verschoben.
+«let» Variablen sind vom Hoisting nicht betroffen
+
+BEISPIEL:
+```javascript
+"use strict";
+var a
+a = 1;
+console.log("0",a);
+```
+ist dasselbe wie:
+
+```javascript
+"use strict";
+a = 1;
+console.log("0",a);
+var a;
+```
+
+### Was gibt typeof(2/0) aus?
+von Robert Stucki - Mittwoch, 25. Mai 2016, 22:30
+
+Multiple Choice:  
+a. infinity  
+b. undefined  
+c. object   
+d. number
+
+Richtige Antwort:  
+d
+
+### Welche der beiden Aufrufe der Funktion bar() funktionieren?
+von Anton Kammermeier - Freitag, 27. Mai 2016, 22:56
+
+```javascript
+function foo() { bar(); function bar() {…} }
+
+function foo() { bar(); var bar = function() {…} }
+```
+
+Lösung:  
+(a)
+
+Beschreibung:  
+Hoisting von Funktionsdeklarationen funktioniert; Hoisting von Funktionszuweisungen bei Variablendeklarationen nicht.
+Beim Aufruf von bar() in b) ist zwar die Variable bar bekannt, aber die Funktion noch nicht zugewiesen.
+
+### Wo sollen JavaScript-Files im HTML eingebunden werden?
+von Marcel Tinner - Mittwoch, 25. Mai 2016, 17:31
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+   <!-- 1 -->
+</head>
+<body>
+  <!-- 2 -->
+  <h1>content</h1>
+  <!-- 3 -->
+</body>
+</html>
+```
+
+Lösung: Am Ende des Bodies (3)

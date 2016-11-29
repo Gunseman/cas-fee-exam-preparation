@@ -1,0 +1,15 @@
+{
+  "name": "cas-fee-2016-pruefungsfragen",
+  "version": "0.5.0",
+  "description": "CAS FEE 2016 - Prüfungsfragen",
+  "main": " ",
+  "scripts": {
+    "test": " "
+  },
+  "author": "dkellenb",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "markdown-pdf": "^7.0.0"
+  }
+}

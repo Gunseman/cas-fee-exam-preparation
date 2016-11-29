@@ -1,0 +1,222 @@
+# Fragen CAS-FEE - Prüfungsvorbereitung
+
+## [5] 01.06.2016 Engineering JavaScript (2)
+
+### Object Literal vs Function Literal
+von Noel Bellón - Donnerstag, 9. Juni 2016, 11:11
+
+Mit welchen Einschränkungen in Bezug auf OOP muss man "leben" wenn man sich anstatt für die "Function Literal" Schreibweise für die "Object Literal" Schreibweise entscheidet?
+
+In der "Object Literal" Schreibweise gibt es **keine** Möglichkeit **private** Variablen und Funktionen zu definieren.
+
+### Wie ist in JavaScript die Vererbung gelöst?
+von Daniel Kellenberger - Mittwoch, 8. Juni 2016, 16:44
+
+Jede Funktion/Konstruktor hat eine modifizierbares Feld 'prototype'. Auf diesem wird die Superklasse referenziert und der Konstruktor der Klasse definiert:
+
+```javascript
+function Animal() {
+   ...
+}
+function Panda() {
+...
+}
+Panda.prototype = new Animal();
+Panda.prototype.constructor = Panda;
+```
+
+Der JavaScript Interpreter schaut, wenn er die Methode nicht findet, gemäss der prototype chain nach, ob es in der oberen Funktion die Methode gibt.
+
+### Welche Zeilgen haben einen Primitiven Datentyp? (mehere Antworten möglich)
+von Benjamin Rüde - Mittwoch, 8. Juni 2016, 15:55
+
+```javascript
+console.log('a)'+ typeof new String('Test String'));
+console.log('b)'+typeof new String('          space String       ').trim());
+console.log('c)'+typeof (2 * new Number(10)));
+console.log('d)'+typeof new Number(10 + 3));
+console.log('e)'+typeof 'true'.valueOf());
+console.log('f)'+typeof Number('sdffdh'));
+```
+
+Antwort:  
+b),c),e),f)
+
+Console Output:  
+a) object  
+b) string  
+c) number  
+d) object  
+e) string  
+f) number (=> NaN ist vom Typ 'number')
+
+### Welche Ausgaben erzeugen die beiden console.log Aufrufe?
+von Anton Kammermeier - Mittwoch, 8. Juni 2016, 14:22
+
+```javascript
+function Thing(color) {
+    this.myColor = color;
+    this.setColor = function (newColor){
+      this.myColor = newColor;
+    };
+}
+
+var myThing = new Thing("white");
+myThing.setColor("red");
+console.log("Color 1: " + myThing.myColor);
+var yourThing = myThing.setColor;
+yourThing("blue");
+console.log("Color 2: " + myThing.myColor);
+```
+
+Antworten:  
+a) Color 1: red, Color 2: red  
+b) Color 1: red, Color 2: blue  
+c) Color 1: red, Color 2: undefined
+
+Lösung:  
+a)
+
+Beschreibung:  
+Durch die Zuweisung: `var yourThing = myThing.setColor;` wird "this" auf das "globale" Objekt gesetzt.
+Der Aufruf `yourThing("blue");` verändert dadurch die Farbe im Objekt "myThing" nicht.
+
+Besser: Zwischenspeichern des Objekts this in self:
+```javascript
+function Thing(color){
+    var self = this;
+    self.myColor = color;
+    self.setColor = function (newColor){
+      self.myColor = newColor;
+    };
+}
+```
+
+### Welche Arten von Object Creation gibt es ?
+von Philipp Bachmann - Dienstag, 7. Juni 2016, 22:03
+
+1. Object Literal  
+`var newObject = { color: "green", colorize: function() { } };`
+
+1. Object Function  
+```javascript
+var newObject= new Object();
+newObject.color= "green";
+newObject.colorize: function() { };
+```
+
+1. Object.CreateStatic Method  
+`var newObject = Object.create(House.prototype);`
+
+1. Constructor Function  
+`var newObject = new House("green", ...);`
+
+### Was ist der Unterschied zwischen folgenden Codeteilen?
+von Marcel Tinner - Dienstag, 7. Juni 2016, 20:50
+
+1.
+```javascript
+function House(color) {
+  this.facadeColor = color;
+  this.paint = function(newColor) {
+    this.facadeColor = newColor;
+  };
+}
+```
+
+2.
+```javascript
+function House(color) {
+  this.facadeColor = color;
+}
+House.prototype.paint = function(newColor) {
+  this.facadeColor = newColor;
+}
+```
+
+Lösung:  
+Erste Variante bringt einen wesentlichen Nachteil. Diese Methode existiert pro Objektinstanz und führt daher oft zu unnötig hoher Speicherauslastung. Anders beim zweiten Beispiel, diese Methode wird über die ableitenden Objektinstanzen geteilt.
+
+### Was wird in die Konsole geloggt?
+von Rafael Bamert - Dienstag, 7. Juni 2016, 17:11
+
+```javascript
+var variable = "september";
+variable.vowels = 3;
+console.log(variable.vowels);
+```
+
+Auswahl:  
+a) null  
+b) 3  
+c) undefined
+
+Lösung:  
+c
+
+Pseudo-Code:
+```javascript
+var primitive = "september";
+primitive.vowels = 3;
+//new object created to set property
+(new String("september")).vowels = 3;
+
+primitive.vowels;
+//another new object created to retrieve property
+(new String("september")).vowels; //undefined
+```
+
+### Welches Entwurfsmuster wurde implementiert?
+von Marc Labud - Mittwoch, 8. Juni 2016, 17:37
+
+```javascript
+var pattern = (function () {
+    var privateVar;
+
+    function privateMember(arg1, arg2) {
+        //code
+    }
+
+    return {
+        member: function (arg1, arg2) {
+            //code
+        }
+    };
+}());
+```
+
+Antwort:
+
+Das Entwurfsmuster Module. Dieses Muster verhindert den Zugriff auf die private Variable privateVar.
+Der Zugriff erfolgt über die nach dem Return definierten Memberfunktionen.
+Der Aufruf erfolgt mit pattern.member().
+
+### Was ist der Unterschied zwischen Scope und Context?
+von Michel Rimbeaux - Samstag, 4. Juni 2016, 13:57
+
+Jeder Funktionsaufruf besitzt sowohl einen Scope wie auch einen Context.
+
+**Scope**  
+Grundsätzlich ist der Scope funktionbasiert. D.h. der Scope betrifft immer den Geltungsbereich von Variablen (und Funktionen) beim Aufruf einer Funtkion resp. Funktionskette und ist eindeutig für jeden Funtkionsaufruf.
+
+**Context**  
+Grundsätzlich ist der Context objektbasiert. D.h. der Context ist immer der Wert von this, welches eine Referenz auf das Objekt ist, das Eigentümer des aktuell ausgeführten Codes ist.
+
+### Für welche Zwecke eignet sich das Singleton Pattern?
+von Robert Stucki - Samstag, 4. Juni 2016, 10:36
+
+* Wenn man nur ein einziges Objekt/Instanz einer Klasse haben möchte
+* Lazy initialisierung
+
+### Weshalb sollte man den Singelton nicht zu oft verwenden?
+von Philipp Bachmann - Montag, 26. September 2016, 21:09
+
+Macht quasi einen Service "global" verfügbar und versteckt deren Abhängigkeiten, was nicht für ein gutes Software Design spricht. Es limitiert das Anlegen von neuen Objekten und verstösst somit gegen das Single Responsibility Principle. Zudem wird das Unit Testing erschwert wegen der static Variable.
+
+### Was sind die wichtigsten Konzepte bei der objektorientierten Programmierung?
+von Jonathan Uhlmann - Mittwoch, 1. Juni 2016, 18:04
+
+* Datenkapselung
+* Abstraktion
+* Polymorphismus
+* Vererbung
