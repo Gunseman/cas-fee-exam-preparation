@@ -2,6 +2,127 @@
 
 ## [4] 25.05.2016 Engineering JavaScript (1)
 
+
+### Was könnte ein mögliches Problem mit folgendem Code sein:
+von Dimitri Friedli - Montag, 5. Dezember 2016, 20:29
+ 
+```
+typeof bar === "object"
+```
+
+a) die Variable bar könnte ein string mit dem Wert object sein
+
+b) bar ist NULL und in JavaScript somit ein Objekt
+
+c) eine Variabel kann in JavaScript nie ein Objekt sein
+
+A: b
+
+
+### How do you remove a property from an object?
+von Hans Schenker - Mittwoch, 30. November 2016, 19:50
+ 
+1. remove myObj.prop;
+2. myObj.prop.delete();
+3. myObj.prop.remove();
+4. delete myObj.prop
+
+answer: 4.
+
+
+### What does the following code evaluate to?
+von Hans Schenker - Mittwoch, 30. November 2016, 19:47
+
+```
+var arr = [1, 2, 3, 4];
+arr.indexOf(2);
+```
+
+1. 3
+2. 1
+3. 4
+4. 2
+answer: 1
+
+
+### What is the value of x after the following code runs?
+von Hans Schenker - Mittwoch, 30. November 2016, 19:44
+ 
+ ```
+  var x;
+  
+  x++;
+ ```
+
+1. 0
+2. 1
+3. undefined
+4. NaN
+
+answer: 4.
+
+### Based on the following, what is the protoype chain for a?
+von Hans Schenker - Mittwoch, 30. November 2016, 19:42
+
+```
+ var a = ["well","hello","there", "."];
+```
+
+1. a --> Array.prototype --> Object.prototype --> null
+2. a --> Object.prototype --> Array.prototype  --> null
+3. a --> Array.prototype  --> Object.prototype
+4. a --> Array.prototype
+
+answer: 1.
+
+
+### What happens when the following code is executed?
+von Hans Schenker - Mittwoch, 30. November 2016, 19:33
+
+```
+function foo() {
+
+  this.me = "hello";
+
+}
+
+var x = foo();
+
+console.log(x.me);
+```
+
+1. Runtime exception property 'me' not found on undefined
+2. "hello" is written to the console
+3. Syntax error
+
+answer: 1.
+
+
+
+### What will console.log(typeof([1,2]) print out?
+von Hans Schenker - Mittwoch, 30. November 2016, 19:19
+ 
+1. array
+2. string
+3. object
+4. number
+
+answer: object
+
+
+### Given the following, what is the value of x?
+von Hans Schenker - Mittwoch, 30. November 2016, 19:14
+ 
+var x = typeof new String("abc");
+
+1. undefined
+2. object
+3. null
+4. string
+
+answer: 2
+
+
 ### Closure, shorthand definition
 von Raphael Hirscher - Sonntag, 23. Oktober 2016, 23:50
 
