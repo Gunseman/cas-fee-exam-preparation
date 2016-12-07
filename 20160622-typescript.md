@@ -2,6 +2,48 @@
 
 ## [7] 22.06.2016 Engineering & Typescript
 
+### Dependency Injection
+von Raphael Hirscher - Mittwoch, 30. November 2016, 20:12
+
+Welche Aussage ist falsch?
+
+a) Dependency Injection bewirkt eine Reduktion von hoher Kopplung zwischen verschiedenen Klassen.
+b) Dependency Injection garantiert eine hohe Kopplung zwischen verschiedenen Klassen.
+c) Dependency Injection hilft, die Codebasis sauber, lesbarer und wiederverwendbar zu behalten.
+
+Antwort: b)
+
+### Wie wird in TypeScript ein Functionsrückgabewert typisiert?
+von Benjamin Rüde - Dienstag, 29. November 2016, 15:04
+
+Antworten:
+a)
+```
+public foo(return: string) {
+    return 'foo';
+}
+```
+b)
+```
+public string foo() {
+    return 'foo';
+}
+```
+c)
+```
+public foo(): string {
+    return 'foo';
+}
+```
+d)
+```
+public foo: string () {
+    return 'foo';
+}
+```
+
+Lösung: c)
+
 ### Was ist bzw. was definiert Typescript
 von Thomas Brandenburger - Mittwoch, 28. September 2016, 14:57
 

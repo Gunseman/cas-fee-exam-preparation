@@ -2,6 +2,15 @@
 
 ## [6] 15.06.2016 Client Server JS: REST & Express
 
+### NodeJS ist ...
+von Dimitri Friedli - Montag, 5. Dezember 2016, 20:09
+
+a) multithreaded Javascript welches auf dem Server ausgeführt wird und sich somit speziell für rechenintensive Operationen eignet.
+b) JavaScript welches asynchron in der V8 Engine in einem Thread läuft.
+c) absolut nicht geeignet für die Entwicklung von RESTful Services da HTTP request nur schwer gehandelt werden können und es wenige Packages und Community support für diese Aufgabe gibt.
+
+A: b)
+
 ### REST: HEAD
 von Raphael Hirscher - Mittwoch, 16. November 2016, 13:59
 
