@@ -2,6 +2,34 @@
 
 ## [6] 08.06.2016 Client Server mit JS: http & node.js
 
+### Was bedeutet Idempotent im Bezug auf eine RESTful API?
+von Dimitri Friedli - Montag, 5. Dezember 2016, 20:08
+
+a) Ein POST Request ist ein perfektes Beispiel für Idempotenz.
+b) Das Resultat ist immer gleich, auch wenn eine Operation mehfach ausgeführt wird.
+c) Eine RESTful API wird als Idempotent bezeichnet wenn sie nur einem Request standhalten kann.
+
+Antwort:
+b)
+
+### How can you provide a hyperlink to a section in the same document?
+von Hans Schenker - Donnerstag, 1. Dezember 2016, 09:51
+
+Specify a named section in the document with th name attribute : {{<div name="secton1">Div Content</div>}}.
+Provide a link to the named section: {{<a href=#section1">Go to Section 1</a>}}
+If you do not provide a name in the href: {{href="#"}} then the link jumps to top of the document
+
+### Http Protcol is
+von Hans Schenker - Donnerstag, 1. Dezember 2016, 09:34
+
+- byte coded
+- base64 encoded
+- text based
+- c code
+
+answer:
+http is a text based protcol
+
 ### NodeJS
 von Raphael Hirscher - Mittwoch, 23. November 2016, 14:44
 

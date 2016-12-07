@@ -2,6 +2,15 @@
 
 ## [20] 26.10.2016 - Grosse Anwendung mit React
 
+### SPA mit React
+von Michael Hüppi - Mittwoch, 30. November 2016, 06:03
+
+Was brauchst du alles, wenn du mit React eine komplexe SPA entwickeln möchtest, wie du sie mit angular2 realisieren würdest?
+
+- ReactJS
+- Redux (bzw. irgendeine Flux-Implementation)
+- React Router
+
 ### Redux Store
 von Raphael Hirscher - Mittwoch, 23. November 2016, 12:09
 

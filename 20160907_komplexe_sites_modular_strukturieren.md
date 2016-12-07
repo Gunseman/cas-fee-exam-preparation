@@ -2,6 +2,17 @@
 
 ## [15] 07.09.2016 - Komplexe Sites modular strukturieren
 
+### Was versteht man unter dem Shame.css?
+von Benjamin Rüde - Dienstag, 29. November 2016, 17:24
+
+a) Dies ist eine TsLint Erweiterung für unsaubere CSS-Selectoren. Durch Einsatz dieser Erweiterung können sehr komplexe Selectoren verhindert werden.
+b) Ist ein eine CSS Datei welches durch einen Autoprefixer gelaufen ist und nun komplett vollgeschrieben ist mit Vendor Prefixes.
+c) Ist die abwertende Bezeichnung für eine CSS Datei welche nicht nach den BEM Vorgaben aufgebaut ist.
+d) Eine CSS File in welchem alle unschönen Selectoren oder CSS Hacks zusammenfasst werden zur besseren Übersicht. Im Idealfall können diese Selectoren oder Hacks zu einem späteren Zeitpunkt behoben / ersetzt werden.
+
+Lösung:
+d)
+
 ### Was ist ein BEM Mix?
 von Patrick Bonetti - Mittwoch, 14. September 2016, 20:07
 

@@ -2,6 +2,27 @@
 
 ## [21] 02.11.2016 - Site Optimization / Performance
 
+### Welches Bildformat ist das beste um ein Foto einer Landschaft online anzuzeigen?
+von Benjamin Rüde - Mittwoch, 30. November 2016, 23:29
+
+a) GIF
+b) PNG
+c) JPEG
+d) SVG
+
+Antwort c)
+
+### [X]Responsive Image
+von Michael Hüppi - Donnerstag, 1. Dezember 2016, 08:05
+
+Welches Attribut verwendest du bei Responsive Images im img-Tag?
+
+a) pictureset
+b) device-source
+c) srcset
+
+Antwort c) ist richtig
+
 ### Sprites
 von Raphael Hirscher - Mittwoch, 23. November 2016, 15:22
 
