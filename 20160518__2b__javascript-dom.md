@@ -1,6 +1,6 @@
 # Fragen CAS-FEE - Prüfungsvorbereitung
 
-## [3] 18.05.2016 JavaScript, DOM-API, jQuery
+## [2b] 18.05.2016 JavaScript, DOM-API, jQuery
 
 ### Nenne 3 Dom Schnittstellen
 von Thomas Brandenburger - Mittwoch, 28. September 2016, 15:15

@@ -1,6 +1,6 @@
 # Fragen CAS-FEE - Prüfungsvorbereitung
 
-## [6] 08.06.2016 Client Server mit JS: http & node.js
+## [5] 08.06.2016 Client Server mit JS: http & node.js
 
 ### Was bedeutet Idempotent im Bezug auf eine RESTful API?
 von Dimitri Friedli - Montag, 5. Dezember 2016, 20:08
