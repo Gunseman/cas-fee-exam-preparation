@@ -21,27 +21,27 @@ c) nicht machen. Die heutigen Screenreader können Inhalte selbständig richtig 
 ### Weshalb ist es aus Accessibility-Sicht wichtig, zu jedem HTML-Formularfeld auch ein -Tag zu implementieren?
 von Patrick Bonetti - Mittwoch, 30. November 2016, 21:28
 
-User mit Screenreader navigieren in der Regel mit Hilfe der Tabulator-Taste durch eine Website und springen damit bei Formularen von Feld zu Feld. Ohne {{<label>}} zu einem Feld ist es für den Benutzer eines Screenreaders schwierig bis unmöglich herauszufinden, was er in einem Formularfeld eingeben muss (z.B. Textfeld) bzw. welche Optionen er hat (z.B. Checkbox). Wird ein {{<label>}} zu einem Feld gesetzt, liest der Screenreader dessen Inhalt vor, wenn man zu einem Formularfeld navigiert.
+User mit Screenreader navigieren in der Regel mit Hilfe der Tabulator-Taste durch eine Website und springen damit bei Formularen von Feld zu Feld. Ohne `<label>` zu einem Feld ist es für den Benutzer eines Screenreaders schwierig bis unmöglich herauszufinden, was er in einem Formularfeld eingeben muss (z.B. Textfeld) bzw. welche Optionen er hat (z.B. Checkbox). Wird ein `<label>` zu einem Feld gesetzt, liest der Screenreader dessen Inhalt vor, wenn man zu einem Formularfeld navigiert.
 
 ### SEO Relevanz
 von Raphael Hirscher - Mittwoch, 30. November 2016, 18:42
 
 Nenne mindestens vier HTML-Elemente, die relevant für die Suchmaschinenoptimierung sind.
 
-1. {{<title></title>}}
-2. {{<meta name="description"></meta>}}
-3. {{<nav></nav>}}
-4. {{<h1></h1>}} (Pro in sich geschlossener Inhaltsblock erlaubt -> http://accessiblehtmlheadings.com )
-5. {{<section></section>}}
-6. {{<article></article>}}
+1. `<title></title>`
+2. `<meta name="description"></meta>`
+3. `<nav></nav>`
+4. `<h1></h1>` (Pro in sich geschlossener Inhaltsblock erlaubt -> http://accessiblehtmlheadings.com )
+5. `<section></section>`
+6. `<article></article>`
 
 ### WCAG - Seitenstruktur
 von Michael Hüppi - Mittwoch, 30. November 2016, 05:07
 
 Wie kannst du gemäss WCAG die Seitenstruktur verbessern? (3 Bsp.)
 
-- versteckte {{<hX>}} Elemente, um Bereiche auszuzeichnen
-- semantisch korrekte Markup-Elemente in Kombination mit ARIA-Rollen (z.B. {{<main role="main">...</main>}})
+- versteckte `<hX>` Elemente, um Bereiche auszuzeichnen
+- semantisch korrekte Markup-Elemente in Kombination mit ARIA-Rollen (z.B. `<main role="main">...</main>`)
 - Skiplinks, um dem User zu ermöglichen, Bereiche wie die Navigation zu überspringen
 
 ### SEO: Nenne vier Best practices bzgl. Crawling/Indexierung von dynamischen Inhalten
@@ -65,11 +65,11 @@ von Daniel Kellenberger - Mittwoch, 23. November 2016, 17:34
 
 Welche Elemente sind Mindestanforderungen um eine Tabelle barrierefrei zu gestalten?
 
-- Tabellenbeschreibung als {{<caption>}}
-- Tabellenheader in einem {{<thead>}} Gruppe
-- Spalten oder Zeilen Titel in einem {{<th>}}
+- Tabellenbeschreibung als `<caption>`
+- Tabellenheader in einem `<thead>` Gruppe
+- Spalten oder Zeilen Titel in einem `<th>`
 - Beschreibung in welche Richtung die Beschreibung gilt mittels scope="col" bzw. scope="row"
-- {{<tfooter>}} könnte man hier auch noch erwähnen
+- `<tfooter>` könnte man hier auch noch erwähnen
 
 ### Was ist Barrierefreiheit?
 von Jonathan Uhlmann - Mittwoch, 23. November 2016, 17:16
