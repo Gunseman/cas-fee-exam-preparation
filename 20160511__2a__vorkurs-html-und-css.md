@@ -410,3 +410,30 @@ Antwort:
 div.klasse{ } ==> div[class="klasse"]{ }
 div#id{ } ==> div[id="id"]{ }
 ```
+
+### Welche Farbe hat der Titel?
+von Dimitri Friedli - Montag, 5. Dezember 2016, 20:05
+```html     
+<header id="mainheader" class="header login">
+  <h1 class="login-title">Anmelden</h1>
+</header>
+```
+   
+```css
+.header {
+  height: 50px;
+  width: 100%;
+  background: grey;
+}
+
+.header > h1 {
+  color: blue;
+}
+    
+.login-title {
+  color: red;
+}
+```
+    
+A: Der Titel ist:  
+blau
