@@ -15,9 +15,9 @@ shouldComponentUpdate(nextProps, nextState) {
 ```
 
 ### [X]Was trifft bei JSX nicht zu?
-    von Benjamin Rüde - Donnerstag, 1. Dezember 2016, 08:21
+von Benjamin Rüde - Donnerstag, 1. Dezember 2016, 08:21
 
-a) Alle Elemente müssen nach dem XML Schema geschlossen werden Beispiel: {{<br>}} -> {{<br />}}
+a) Alle Elemente müssen nach dem XML Schema geschlossen werden Beispiel: `<br>` -> `<br />`
 b) Ein JSX Ausdruck muss ein umschliessendes Element haben. (Keine mehrfachen Elemente auf der Root Ebene)
 c) Javascript funktioniert nicht in JSX
 d) Um auf ein Html-Tag das class Attribut setzten zu können muss className anstelle verwendet werden.

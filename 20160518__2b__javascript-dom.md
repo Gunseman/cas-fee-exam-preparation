@@ -49,9 +49,9 @@ Zeige wie ein Scheduler aufgesetzt wird, der sich selbst regelmässig aufruft, a
 Antwort:
 ```javascript
 (function scheduler(window){
-   aktion();
-   windows.setTimeout(scheduler, 100)
-});
+    aktion();
+    window.setTimeout(() => scheduler(window), 1000)
+}(global));
 ```
 
 ### Weshalb sollte der Event 'doubleclick' nicht verwendet werden?
