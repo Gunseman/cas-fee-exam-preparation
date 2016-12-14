@@ -144,7 +144,7 @@ von Philipp Bachmann - Freitag, 24. Juni 2016, 09:23
 - void
 - any
 
-### Was ist der Unterschied bei der Deklaration von Variablen mit var, let und constant
+### Was ist der Unterschied bei der Deklaration von Variablen mit var, let und const
 von Stefan Eugster - Donnerstag, 23. Juni 2016, 15:42
 
 `var foo = 1;`
@@ -155,7 +155,7 @@ Deklaration von Variablen, sollte aufgrund der Scoping Probleme nicht mehr verwe
 
 Deklaration von Variablen welche strikte block-scoping regeln befolgen.
 
-`constant foo = 1;`
+`const foo = 1;`
 
 Deklaration von Variablen wie mit let, welche jedoch nicht verändert werden können.
 
