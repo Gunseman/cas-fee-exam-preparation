@@ -9,7 +9,9 @@ von Tobias Buechel - Mittwoch, 11. Mai 2016, 19:21
 `<input style="border: 1px solid blue">`
 
 * Embedded Styling: Innerhalb vom HTML-Dokument mittels `<style>`-Tag  
-```<style type="text/css">
+
+```
+<style type="text/css">
 input {
   border: 1px solid blue;
 }
