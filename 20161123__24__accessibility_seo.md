@@ -18,7 +18,7 @@ a) eine Website mit validem HTML Entwickeln. Das reicht dem Screenreader.
 b) die Website mit validem HTML durch ARIA Attribute erweitern.
 c) nicht machen. Die heutigen Screenreader können Inhalte selbständig richtig interpretieren.
 
-### Weshalb ist es aus Accessibility-Sicht wichtig, zu jedem HTML-Formularfeld auch ein -Tag zu implementieren?
+### Weshalb ist es aus Accessibility-Sicht wichtig, zu jedem HTML-Formularfeld auch ein `label`-Tag zu implementieren?
 von Patrick Bonetti - Mittwoch, 30. November 2016, 21:28
 
 User mit Screenreader navigieren in der Regel mit Hilfe der Tabulator-Taste durch eine Website und springen damit bei Formularen von Feld zu Feld. Ohne `<label>` zu einem Feld ist es für den Benutzer eines Screenreaders schwierig bis unmöglich herauszufinden, was er in einem Formularfeld eingeben muss (z.B. Textfeld) bzw. welche Optionen er hat (z.B. Checkbox). Wird ein `<label>` zu einem Feld gesetzt, liest der Screenreader dessen Inhalt vor, wenn man zu einem Formularfeld navigiert.

@@ -21,7 +21,8 @@ var mdDocs = [
     "20161026__20__grosse_seiten_mit_react.md",
     "20161102__21__site_optimization.md",
     "20161116__23__isomorphic_frameworks.md",
-    "20161123__24__accessibility_seo.md"
+    "20161123__24__accessibility_seo.md",
+    "20161207__26__WebSecurity.md"
   ];
 var pdfDocs = mdDocs.map(function (d) { return "pdf/" + d.replace(".md", ".pdf") });
 var options = {
